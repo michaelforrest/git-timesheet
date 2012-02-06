@@ -1,4 +1,4 @@
 desc "install"
 task :install do
-  `cp git-timesheet.rb /usr/local/bin/`
+  `cp bin/* /usr/local/bin/`
 end
