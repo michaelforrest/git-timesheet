@@ -31,7 +31,7 @@ else
   log_lines = `git log --no-merges --simplify-merges --author="#{options[:author].gsub('"','\\"')}" --format="%ad %s <%h>" --date=iso --since="#{options[:since].gsub('"','\\"')}"`.split("\n")
   day_entries = log_lines.inject({}) {|days, line|
     timestamp = Time.parse line.slice!(0,25)
-    day = timestamp.strftime("%Y-%m-%d")
+    day = timestamp.strftime("%E %Y-%m-%d")
     days[day] ||= []
     days[day] << timestamp.strftime("%H:%S ") + line.strip
     days
